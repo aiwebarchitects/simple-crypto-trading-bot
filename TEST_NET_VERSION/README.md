@@ -21,6 +21,8 @@ Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BO
 ### For Mainnet (Advanced Users)
 Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
 - Get 4% reduced trading fees
+
+- get your Creds for the Main Net Version
 - https://app.hyperliquid.xyz/API
 
 ## Step 2: Clone and Configure
