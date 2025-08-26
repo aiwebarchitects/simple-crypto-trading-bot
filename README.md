@@ -8,7 +8,7 @@
 
 Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
 
-### For Testnet (Recommended for Beginners)
+### After you created your Account - Switch first to Testnet
 1. Visit: https://app.hyperliquid-testnet.xyz/API
 2. Create API credentials:
    - **Name**: `testnet_api`
@@ -21,6 +21,7 @@ Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
 ### For Mainnet (Advanced Users)
 Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
 - Get 4% reduced trading fees
+- https://app.hyperliquid.xyz/API
 
 ## Step 2: Clone and Configure
 
