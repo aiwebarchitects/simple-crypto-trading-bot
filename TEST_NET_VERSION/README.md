@@ -6,7 +6,7 @@
 
 ## Step 1: Get Your Hyperliquid Account
 
-Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
 
 ### After you created your Account - Switch first to Testnet
 1. Visit: https://app.hyperliquid-testnet.xyz/API
@@ -19,7 +19,7 @@ Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
 ⚠️ **IMPORTANT**: Copy and save your private key immediately! It won't be shown again.
 
 ### For Mainnet (Advanced Users)
-Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
 - Get 4% reduced trading fees
 - https://app.hyperliquid.xyz/API
 
