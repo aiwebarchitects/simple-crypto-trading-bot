@@ -11,6 +11,7 @@ import time
 import threading
 import subprocess
 import json
+import logging
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 import csv
@@ -54,6 +55,9 @@ class TradingPanel:
         self.position_history = {}
         self.current_tab = "home"
         
+        # Setup trade logging
+        self.setup_trade_logging()
+        
         # Check and load backtest results
         self.check_and_load_backtest_results()
         
@@ -67,7 +71,7 @@ class TradingPanel:
         
         # Available coins - dynamically fetched from Hyperliquid
         self.log("🔄 Fetching available coins from Hyperliquid...")
-        self.available_coins = fetch_available_coins()
+        self.available_coins = fetch_available_coins(self.info, self.address)
         
         # Fallback to configured coins if fetch fails
         if not self.available_coins:
@@ -90,6 +94,87 @@ class TradingPanel:
         self.log(f"📊 Max Positions: {self.max_positions}")
         self.log(f"💰 Position Size: ${self.position_size_usd} USDC each")
         self.log(f"🔗 Account: {self.address}")
+
+    def setup_trade_logging(self):
+        """Setup comprehensive trade logging system"""
+        # Create logs directory if it doesn't exist
+        os.makedirs('logs', exist_ok=True)
+        
+        # Setup file logger for trades
+        self.trade_logger = logging.getLogger('trade_logger')
+        self.trade_logger.setLevel(logging.INFO)
+        
+        # Create file handler with timestamp in filename
+        log_filename = f"logs/trades_{datetime.now().strftime('%Y%m%d')}.log"
+        file_handler = logging.FileHandler(log_filename)
+        file_handler.setLevel(logging.INFO)
+        
+        # Create formatter
+        formatter = logging.Formatter('%(asctime)s | %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+        file_handler.setFormatter(formatter)
+        
+        # Add handler to logger
+        if not self.trade_logger.handlers:
+            self.trade_logger.addHandler(file_handler)
+        
+        self.log(f"📝 Trade logging setup complete: {log_filename}")
+
+    def log_trade_action(self, coin: str, action: str, reason: str, details: Dict):
+        """Log detailed trade action to file"""
+        try:
+            # Get current position info if available
+            positions = self.get_active_positions()
+            position_info = next((p for p in positions if p['coin'] == coin), {})
+            
+            # Get parameters used for this coin
+            params = self.get_optimized_params_for_coin(coin)
+            param_source = "OPTIMIZED" if coin in self.optimized_params else "DEFAULT"
+            
+            # Create comprehensive log entry
+            log_data = {
+                'coin': coin,
+                'action': action,
+                'reason': reason,
+                'timestamp': datetime.now().isoformat(),
+                'position_info': {
+                    'side': position_info.get('side', 'N/A'),
+                    'size': position_info.get('size', 0),
+                    'entry_price': position_info.get('entry_px', 0),
+                    'current_price': position_info.get('current_price', 0),
+                    'profit_percent': position_info.get('profit_percent', 0),
+                    'unrealized_pnl': position_info.get('unrealized_pnl', 0),
+                    'leverage': position_info.get('leverage', 1)
+                },
+                'risk_params': {
+                    'source': param_source,
+                    'stop_loss_percent': params.get('stop_loss_percent', 0),
+                    'trailing_stop_percent': params.get('trailing_stop_percent', 0),
+                    'trailing_stop_min_profit': self.trailing_stop_min_profit,
+                    'profit_take_threshold': self.profit_take_threshold,
+                    'profit_take_drop': self.profit_take_drop
+                },
+                'trailing_stop_data': self.position_history.get(coin, {}),
+                'additional_details': details
+            }
+            
+            # Format for file logging
+            log_message = (
+                f"TRADE_ACTION | {coin} | {action} | {reason} | "
+                f"Side: {log_data['position_info']['side']} | "
+                f"Profit: {log_data['position_info']['profit_percent']:.2f}% | "
+                f"PnL: ${log_data['position_info']['unrealized_pnl']:.2f} | "
+                f"Params: {param_source} SL:{params.get('stop_loss_percent', 0):.1f}% TS:{params.get('trailing_stop_percent', 0):.1f}% | "
+                f"Details: {details}"
+            )
+            
+            # Log to file
+            self.trade_logger.info(log_message)
+            
+            # Also log to system logs for immediate visibility
+            self.log(f"📝 TRADE LOG: {coin} {action} - {reason}")
+            
+        except Exception as e:
+            self.log(f"❌ Error logging trade action: {e}")
 
     def log(self, message: str):
         """Add message to system logs"""
@@ -339,13 +424,31 @@ class TradingPanel:
                 stop_loss_percent = params['stop_loss_percent']
                 trailing_stop_percent = params['trailing_stop_percent']
                 
-                # Debug logging
-                self.log(f"🔍 Checking {coin}: Current {profit_percent:.2f}% (SL: {stop_loss_percent:.1f}%, TS: {trailing_stop_percent:.1f}%)")
+                # Log position monitoring details
+                monitoring_details = {
+                    'current_profit': profit_percent,
+                    'stop_loss_threshold': -stop_loss_percent,
+                    'trailing_stop_percent': trailing_stop_percent,
+                    'trailing_stop_min_profit': self.trailing_stop_min_profit,
+                    'profit_take_threshold': self.profit_take_threshold,
+                    'profit_take_drop': self.profit_take_drop
+                }
+                
+                # Debug logging with comprehensive details
+                self.log(f"🔍 Monitoring {coin}: Profit {profit_percent:.2f}% | SL: {stop_loss_percent:.1f}% | TS: {trailing_stop_percent:.1f}%")
                 
                 # Check stop loss using optimized parameter
                 if profit_percent <= -stop_loss_percent:
-                    self.log(f"🛑 Stop Loss triggered for {coin}: {profit_percent:.2f}% (threshold: {stop_loss_percent:.1f}%)")
-                    self.close_position(coin, "Stop Loss")
+                    stop_loss_details = {
+                        'trigger_type': 'stop_loss',
+                        'current_profit': profit_percent,
+                        'stop_loss_threshold': -stop_loss_percent,
+                        'loss_amount': profit_percent - (-stop_loss_percent)
+                    }
+                    
+                    self.log(f"🛑 STOP LOSS TRIGGERED for {coin}: {profit_percent:.2f}% <= {-stop_loss_percent:.1f}%")
+                    self.log_trade_action(coin, "POSITION_CLOSE", "Stop Loss", stop_loss_details)
+                    self.close_position(coin, "Stop Loss", stop_loss_details)
                     continue
                 
                 # Check trailing stop loss using optimized parameter
@@ -353,45 +456,116 @@ class TradingPanel:
                     max_profit = self.position_history[coin]['max_profit']
                     trailing_stop_level = max_profit - trailing_stop_percent
                     
-                    self.log(f"🔍 {coin} - Max: {max_profit:.2f}%, Current: {profit_percent:.2f}%, Stop Level: {trailing_stop_level:.2f}%")
+                    trailing_details = {
+                        'max_profit_achieved': max_profit,
+                        'current_profit': profit_percent,
+                        'trailing_stop_level': trailing_stop_level,
+                        'trailing_stop_percent': trailing_stop_percent,
+                        'min_profit_required': self.trailing_stop_min_profit
+                    }
+                    
+                    self.log(f"🔍 {coin} Trailing Analysis - Max: {max_profit:.2f}% | Current: {profit_percent:.2f}% | Stop Level: {trailing_stop_level:.2f}%")
                     
                     # Trailing stop only triggers if:
                     # 1. We had some profit (max_profit > trailing_stop_min_profit)
                     # 2. Current profit drops below trailing stop level
-                    self.log(f"🔍 {coin} Trigger Check: Max>{self.trailing_stop_min_profit}? {max_profit > self.trailing_stop_min_profit}, Current<Stop? {profit_percent}<{trailing_stop_level} = {profit_percent < trailing_stop_level}")
+                    trigger_condition_1 = max_profit > self.trailing_stop_min_profit
+                    trigger_condition_2 = profit_percent < trailing_stop_level
                     
-                    if max_profit > self.trailing_stop_min_profit and profit_percent < trailing_stop_level:
-                        self.log(f"📉 TRAILING STOP TRIGGERED for {coin}: Max {max_profit:.2f}% -> Current {profit_percent:.2f}% (Stop at {trailing_stop_level:.2f}%)")
-                        self.close_position(coin, "Trailing Stop")
+                    self.log(f"🔍 {coin} Trigger Analysis: Max>{self.trailing_stop_min_profit}%? {trigger_condition_1} | Current<{trailing_stop_level:.2f}%? {trigger_condition_2}")
+                    
+                    if trigger_condition_1 and trigger_condition_2:
+                        trailing_details.update({
+                            'trigger_type': 'trailing_stop',
+                            'profit_drop': max_profit - profit_percent,
+                            'trigger_reason': f"Profit dropped from {max_profit:.2f}% to {profit_percent:.2f}% (>{trailing_stop_percent:.1f}% drop)"
+                        })
+                        
+                        self.log(f"📉 TRAILING STOP TRIGGERED for {coin}: Max {max_profit:.2f}% -> Current {profit_percent:.2f}% (Drop: {max_profit - profit_percent:.2f}%)")
+                        self.log_trade_action(coin, "POSITION_CLOSE", "Trailing Stop", trailing_details)
+                        self.close_position(coin, "Trailing Stop", trailing_details)
                         continue
                     
                     # Take profit if reached threshold and dropped
                     if max_profit >= self.profit_take_threshold and profit_percent <= self.profit_take_drop:
-                        self.log(f"💰 Take Profit triggered for {coin}: Max {max_profit:.2f}% -> Current {profit_percent:.2f}%")
-                        self.close_position(coin, "Take Profit")
+                        take_profit_details = {
+                            'trigger_type': 'take_profit',
+                            'max_profit_achieved': max_profit,
+                            'current_profit': profit_percent,
+                            'profit_take_threshold': self.profit_take_threshold,
+                            'profit_take_drop': self.profit_take_drop,
+                            'trigger_reason': f"Reached {max_profit:.2f}% then dropped to {profit_percent:.2f}%"
+                        }
+                        
+                        self.log(f"💰 TAKE PROFIT TRIGGERED for {coin}: Max {max_profit:.2f}% -> Current {profit_percent:.2f}%")
+                        self.log_trade_action(coin, "POSITION_CLOSE", "Take Profit", take_profit_details)
+                        self.close_position(coin, "Take Profit", take_profit_details)
                         continue
                         
         except Exception as e:
             self.log(f"❌ Error in risk management: {e}")
 
-    def close_position(self, coin: str, reason: str):
-        """Close a position"""
+    def close_position(self, coin: str, reason: str, details: Dict = None):
+        """Close a position with comprehensive logging"""
         try:
-            self.log(f"🔄 Closing {coin} position: {reason}")
+            # Get position info before closing for logging
+            positions = self.get_active_positions()
+            position_info = next((p for p in positions if p['coin'] == coin), {})
+            
+            self.log(f"🔄 Attempting to close {coin} position: {reason}")
+            
+            # Log the close attempt
+            close_details = details or {}
+            close_details.update({
+                'close_attempt_time': datetime.now().isoformat(),
+                'position_before_close': position_info
+            })
             
             # Use the simple market_close method like in executer/close_position.py
             result = self.exchange.market_close(coin)
             
             if result.get("status") == "ok":
-                self.log(f"✅ {coin} position closed successfully: {reason}")
+                # Successful close
+                final_details = close_details.copy()
+                final_details.update({
+                    'close_result': 'SUCCESS',
+                    'exchange_response': result,
+                    'final_profit_percent': position_info.get('profit_percent', 0),
+                    'final_pnl_usd': position_info.get('unrealized_pnl', 0)
+                })
+                
+                self.log(f"✅ {coin} position closed successfully: {reason} | Final P&L: {position_info.get('profit_percent', 0):.2f}% (${position_info.get('unrealized_pnl', 0):.2f})")
+                
+                # Log successful close
+                self.log_trade_action(coin, "POSITION_CLOSED", reason, final_details)
+                
                 # Remove from position history
                 if coin in self.position_history:
                     del self.position_history[coin]
+                    
             else:
+                # Failed close
+                error_details = close_details.copy()
+                error_details.update({
+                    'close_result': 'FAILED',
+                    'exchange_response': result,
+                    'error_reason': result.get('error', 'Unknown error')
+                })
+                
                 self.log(f"❌ Failed to close {coin} position: {result}")
+                self.log_trade_action(coin, "POSITION_CLOSE_FAILED", reason, error_details)
                     
         except Exception as e:
-            self.log(f"❌ Error closing {coin} position: {e}")
+            # Exception during close
+            exception_details = details or {}
+            exception_details.update({
+                'close_result': 'EXCEPTION',
+                'exception_message': str(e),
+                'exception_type': type(e).__name__
+            })
+            
+            self.log(f"❌ Exception closing {coin} position: {e}")
+            self.log_trade_action(coin, "POSITION_CLOSE_EXCEPTION", reason, exception_details)
 
     def run_scanner(self, scanner_type: str) -> List[Dict]:
         """Run scanner and return results"""
