@@ -27,8 +27,9 @@ Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
 
 ```bash
 # Clone the repository
-git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot
-cd simple-crypto-trading-bot
+git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot.git
+cd simple-crypto-trading-bot/TEST_NET_VERSION
+
 
 # Install dependencies
 pip install -r requirements.txt
