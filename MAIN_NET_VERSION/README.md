@@ -1,4 +1,112 @@
-# Bitcoin Trading Bot - Low/High Reversal Strategy
+# 🎉 MAINNET VERSION 1.0 RELEASE
+
+**🚀 Now Live on [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500) Mainnet!**
+
+After extensive testing and optimization, our crypto trading bot is now ready for live trading with real capital. This mainnet release features battle-tested algorithms, advanced risk management, and proven backtesting results.
+
+**✨ What's New:**
+- ✅ Production-ready mainnet configuration
+- ✅ Enhanced security and error handling  
+- ✅ Optimized trading parameters from extensive backtesting
+- ✅ Real-time risk management and position monitoring
+- ✅ 4% reduced trading fees with our [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500) bonus link
+
+**⚠️ Important:** Start with small position sizes and thoroughly understand the system before scaling up.
+
+---
+
+# 🚀 Quick Setup Guide
+
+## Prerequisites
+- **MetaMask Wallet** (no funds required - fresh wallet is fine)
+- **Python 3.7+** installed on your system
+
+## Step 1: Get Your Hyperliquid Account
+
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
+
+### After you created your Account - Switch first to Testnet
+1. Visit: https://app.hyperliquid-testnet.xyz/API
+2. Create API credentials:
+   - **Name**: `testnet_api`
+   - Click **"Generate"** → This creates your wallet address
+   - Click **"Authorize API Wallet"** → This shows your private key
+   - **Days Valid**: 180
+
+⚠️ **IMPORTANT**: Copy and save your private key immediately! It won't be shown again.
+
+### For Mainnet (Advanced Users)
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
+- Get 4% reduced trading fees
+
+- get your Creds for the Main Net Version
+- https://app.hyperliquid.xyz/API
+
+## Step 2: Clone and Configure
+
+```bash
+# Clone the repository
+git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot.git
+cd simple-crypto-trading-bot/TEST_NET_VERSION
+for mainnet
+cd simple-crypto-trading-bot/MAIN_NET_VERSION
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Step 3: Add Your Credentials
+
+You need to add your credentials in **THREE** files:
+
+### File 1: `executer/config.json`
+```json
+{
+    "secret_key": "YOUR_PRIVATE_KEY_HERE",
+    "account_address": "YOUR_WALLET_ADDRESS_HERE"
+}
+```
+
+### File 2: `default_config.py`
+```python
+# API CONFIGURATION
+SECRET_KEY = "YOUR_PRIVATE_KEY_HERE"
+ACCOUNT_ADDRESS = "YOUR_WALLET_ADDRESS_HERE"
+```
+
+### File 3: `account_infos.py
+```python
+# API CONFIGURATION
+user_state = info.user_state("YOUR_WALLET_ADDRESS_HERE")
+```
+
+
+## Step 4: Get Test Funds (Testnet Only)
+
+Visit the faucet to get free USDC for testing:
+https://app.hyperliquid-testnet.xyz/drip
+
+## Step 5: Start Trading
+
+```bash
+python3 trading_panel.py
+```
+after the Start, you can see the System Status on top.
+to Start the System: Use Number 5 on your keyboard.
+
+
+That's it! Your bot is ready to trade. 🎉
+
+Your Panel shall Look something like:
+
+![Trading Panel](trading_panel.png)
+
+---
+
+⚠️ **Safety First**: Always start with testnet to learn the system before using real money.
+
+
+# Mutli Crypto Trading Bot - Low/High Reversal Strategy
 
 A comprehensive cryptocurrency trading system that combines automated backtesting with live trading capabilities using optimized parameters. The system implements a low/high reversal strategy with intelligent parameter optimization and real-time risk management.
 
@@ -191,14 +299,6 @@ TRAILING_STOP_MIN_PROFIT = 2.0        # Minimum profit before trailing
 
 # Backtest Settings
 BACKTEST_REFRESH_HOURS = 24           # Auto-refresh optimization data
-```
-
-### API Configuration (`executer/config.json`)
-```json
-{
-  "api_url": "https://api.hyperliquid-testnet.xyz",
-  "private_key": "your_private_key_here"
-}
 ```
 
 ## 🎮 Using the Trading Panel
