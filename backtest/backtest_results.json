@@ -1,0 +1,482 @@
+{
+    "ETH": {
+        "short_ema": 5,
+        "long_ema": 23,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:58:36",
+        "backtest_profit_pct": 1.8,
+        "binance_pair": "ETHUSDT",
+        "market_cap_rank": 2
+    },
+    "XRP": {
+        "short_ema": 23,
+        "long_ema": 44,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:58:36",
+        "backtest_profit_pct": -2.53,
+        "binance_pair": "XRPUSDT",
+        "market_cap_rank": 3
+    },
+    "BTC": {
+        "short_ema": 21,
+        "long_ema": 44,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:58:36",
+        "backtest_profit_pct": -2.68,
+        "binance_pair": "BTCUSDT",
+        "market_cap_rank": 1
+    },
+    "BNB": {
+        "short_ema": 5,
+        "long_ema": 29,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:58:46",
+        "backtest_profit_pct": -2.42,
+        "binance_pair": "BNBUSDT",
+        "market_cap_rank": 5
+    },
+    "USDC": {
+        "short_ema": 17,
+        "long_ema": 41,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:58:46",
+        "backtest_profit_pct": 0.01,
+        "binance_pair": "USDCUSDT",
+        "market_cap_rank": 7
+    },
+    "SOL": {
+        "short_ema": 21,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:58:47",
+        "backtest_profit_pct": 3.86,
+        "binance_pair": "SOLUSDT",
+        "market_cap_rank": 6
+    },
+    "ADA": {
+        "short_ema": 11,
+        "long_ema": 41,
+        "signal_ema": 12,
+        "last_run": "2025-08-26 15:58:56",
+        "backtest_profit_pct": -5.67,
+        "binance_pair": "ADAUSDT",
+        "market_cap_rank": 11
+    },
+    "DOGE": {
+        "short_ema": 7,
+        "long_ema": 29,
+        "signal_ema": 10,
+        "last_run": "2025-08-26 15:58:56",
+        "backtest_profit_pct": -2.37,
+        "binance_pair": "DOGEUSDT",
+        "market_cap_rank": 10
+    },
+    "TRX": {
+        "short_ema": 15,
+        "long_ema": 32,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:58:56",
+        "backtest_profit_pct": 0.52,
+        "binance_pair": "TRXUSDT",
+        "market_cap_rank": 9
+    },
+    "WBETH": {
+        "short_ema": 5,
+        "long_ema": 29,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:06",
+        "backtest_profit_pct": 2.09,
+        "binance_pair": "WBETHUSDT",
+        "market_cap_rank": 15
+    },
+    "WBTC": {
+        "short_ema": 23,
+        "long_ema": 44,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:06",
+        "backtest_profit_pct": -1.55,
+        "binance_pair": "WBTCUSDT",
+        "market_cap_rank": 16
+    },
+    "LINK": {
+        "short_ema": 9,
+        "long_ema": 20,
+        "signal_ema": 10,
+        "last_run": "2025-08-26 15:59:06",
+        "backtest_profit_pct": 2.83,
+        "binance_pair": "LINKUSDT",
+        "market_cap_rank": 13
+    },
+    "XLM": {
+        "short_ema": 7,
+        "long_ema": 20,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 15:59:15",
+        "backtest_profit_pct": -0.69,
+        "binance_pair": "XLMUSDT",
+        "market_cap_rank": 18
+    },
+    "BCH": {
+        "short_ema": 19,
+        "long_ema": 26,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:16",
+        "backtest_profit_pct": 0.24,
+        "binance_pair": "BCHUSDT",
+        "market_cap_rank": 21
+    },
+    "SUI": {
+        "short_ema": 5,
+        "long_ema": 23,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:16",
+        "backtest_profit_pct": -3.91,
+        "binance_pair": "SUIUSDT",
+        "market_cap_rank": 20
+    },
+    "HBAR": {
+        "short_ema": 7,
+        "long_ema": 23,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:25",
+        "backtest_profit_pct": -1.85,
+        "binance_pair": "HBARUSDT",
+        "market_cap_rank": 22
+    },
+    "AVAX": {
+        "short_ema": 23,
+        "long_ema": 26,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:25",
+        "backtest_profit_pct": 3.5,
+        "binance_pair": "AVAXUSDT",
+        "market_cap_rank": 23
+    },
+    "LTC": {
+        "short_ema": 17,
+        "long_ema": 32,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:25",
+        "backtest_profit_pct": -2.38,
+        "binance_pair": "LTCUSDT",
+        "market_cap_rank": 26
+    },
+    "TON": {
+        "short_ema": 21,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:35",
+        "backtest_profit_pct": -0.59,
+        "binance_pair": "TONUSDT",
+        "market_cap_rank": 27
+    },
+    "SHIB": {
+        "short_ema": 23,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:35",
+        "backtest_profit_pct": -0.59,
+        "binance_pair": "SHIBUSDT",
+        "market_cap_rank": 29
+    },
+    "UNI": {
+        "short_ema": 5,
+        "long_ema": 23,
+        "signal_ema": 10,
+        "last_run": "2025-08-26 15:59:35",
+        "backtest_profit_pct": -1.38,
+        "binance_pair": "UNIUSDT",
+        "market_cap_rank": 34
+    },
+    "DOT": {
+        "short_ema": 15,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 15:59:45",
+        "backtest_profit_pct": 3.37,
+        "binance_pair": "DOTUSDT",
+        "market_cap_rank": 35
+    },
+    "AAVE": {
+        "short_ema": 5,
+        "long_ema": 44,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:45",
+        "backtest_profit_pct": 11.16,
+        "binance_pair": "AAVEUSDT",
+        "market_cap_rank": 38,
+        "plot_file": "plots/best_backtest_result_AAVE_20250826_160116.png"
+    },
+    "PEPE": {
+        "short_ema": 23,
+        "long_ema": 32,
+        "signal_ema": 12,
+        "last_run": "2025-08-26 15:59:45",
+        "backtest_profit_pct": 1.78,
+        "binance_pair": "PEPEUSDT",
+        "market_cap_rank": 41
+    },
+    "ETC": {
+        "short_ema": 5,
+        "long_ema": 20,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:54",
+        "backtest_profit_pct": -2.48,
+        "binance_pair": "ETCUSDT",
+        "market_cap_rank": 45
+    },
+    "ENA": {
+        "short_ema": 21,
+        "long_ema": 47,
+        "signal_ema": 12,
+        "last_run": "2025-08-26 15:59:54",
+        "backtest_profit_pct": 2.33,
+        "binance_pair": "ENAUSDT",
+        "market_cap_rank": 42
+    },
+    "TAO": {
+        "short_ema": 7,
+        "long_ema": 44,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 15:59:54",
+        "backtest_profit_pct": 1.84,
+        "binance_pair": "TAOUSDT",
+        "market_cap_rank": 46
+    },
+    "APT": {
+        "short_ema": 9,
+        "long_ema": 38,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:04",
+        "backtest_profit_pct": 2.19,
+        "binance_pair": "APTUSDT",
+        "market_cap_rank": 48
+    },
+    "ONDO": {
+        "short_ema": 5,
+        "long_ema": 44,
+        "signal_ema": 8,
+        "last_run": "2025-08-26 16:00:04",
+        "backtest_profit_pct": -1.22,
+        "binance_pair": "ONDOUSDT",
+        "market_cap_rank": 49
+    },
+    "NEAR": {
+        "short_ema": 5,
+        "long_ema": 23,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 16:00:04",
+        "backtest_profit_pct": 2.62,
+        "binance_pair": "NEARUSDT",
+        "market_cap_rank": 47
+    },
+    "ICP": {
+        "short_ema": 5,
+        "long_ema": 20,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:13",
+        "backtest_profit_pct": -0.71,
+        "binance_pair": "ICPUSDT",
+        "market_cap_rank": 54
+    },
+    "ARB": {
+        "short_ema": 21,
+        "long_ema": 35,
+        "signal_ema": 14,
+        "last_run": "2025-08-26 16:00:13",
+        "backtest_profit_pct": 5.85,
+        "binance_pair": "ARBUSDT",
+        "market_cap_rank": 51
+    },
+    "USD1": {
+        "short_ema": 15,
+        "long_ema": 23,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 16:00:13",
+        "backtest_profit_pct": 0.05,
+        "binance_pair": "USD1USDT",
+        "market_cap_rank": 55
+    },
+    "ALGO": {
+        "short_ema": 5,
+        "long_ema": 20,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:22",
+        "backtest_profit_pct": 5.89,
+        "binance_pair": "ALGOUSDT",
+        "market_cap_rank": 58,
+        "plot_file": "plots/best_backtest_result_ALGO_20250826_160119.png"
+    },
+    "POL": {
+        "short_ema": 9,
+        "long_ema": 20,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 16:00:22",
+        "backtest_profit_pct": 3.22,
+        "binance_pair": "POLUSDT",
+        "market_cap_rank": 59
+    },
+    "BNSOL": {
+        "short_ema": 15,
+        "long_ema": 41,
+        "signal_ema": 14,
+        "last_run": "2025-08-26 16:00:22",
+        "backtest_profit_pct": 4.34,
+        "binance_pair": "BNSOLUSDT",
+        "market_cap_rank": 60
+    },
+    "ATOM": {
+        "short_ema": 23,
+        "long_ema": 41,
+        "signal_ema": 10,
+        "last_run": "2025-08-26 16:00:32",
+        "backtest_profit_pct": 1.75,
+        "binance_pair": "ATOMUSDT",
+        "market_cap_rank": 63
+    },
+    "PENGU": {
+        "short_ema": 21,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 16:00:32",
+        "backtest_profit_pct": 4.76,
+        "binance_pair": "PENGUUSDT",
+        "market_cap_rank": 66
+    },
+    "VET": {
+        "short_ema": 7,
+        "long_ema": 23,
+        "signal_ema": 14,
+        "last_run": "2025-08-26 16:00:32",
+        "backtest_profit_pct": 6.98,
+        "binance_pair": "VETUSDT",
+        "market_cap_rank": 61,
+        "plot_file": "plots/best_backtest_result_VET_20250826_160118.png"
+    },
+    "SEI": {
+        "short_ema": 5,
+        "long_ema": 23,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:41",
+        "backtest_profit_pct": 0.1,
+        "binance_pair": "SEIUSDT",
+        "market_cap_rank": 73
+    },
+    "WLD": {
+        "short_ema": 23,
+        "long_ema": 41,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 16:00:41",
+        "backtest_profit_pct": 2.03,
+        "binance_pair": "WLDUSDT",
+        "market_cap_rank": 71
+    },
+    "RENDER": {
+        "short_ema": 5,
+        "long_ema": 20,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:41",
+        "backtest_profit_pct": -0.38,
+        "binance_pair": "RENDERUSDT",
+        "market_cap_rank": 70
+    },
+    "FET": {
+        "short_ema": 5,
+        "long_ema": 29,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:00:50",
+        "backtest_profit_pct": -0.12,
+        "binance_pair": "FETUSDT",
+        "market_cap_rank": 77
+    },
+    "TRUMP": {
+        "short_ema": 19,
+        "long_ema": 38,
+        "signal_ema": 14,
+        "last_run": "2025-08-26 16:00:50",
+        "backtest_profit_pct": -1.59,
+        "binance_pair": "TRUMPUSDT",
+        "market_cap_rank": 76
+    },
+    "BFUSD": {
+        "short_ema": 19,
+        "long_ema": 41,
+        "signal_ema": 8,
+        "last_run": "2025-08-26 16:00:50",
+        "backtest_profit_pct": -0.04,
+        "binance_pair": "BFUSDUSDT",
+        "market_cap_rank": 74
+    },
+    "QNT": {
+        "short_ema": 5,
+        "long_ema": 41,
+        "signal_ema": 8,
+        "last_run": "2025-08-26 16:01:00",
+        "backtest_profit_pct": -0.8,
+        "binance_pair": "QNTUSDT",
+        "market_cap_rank": 84
+    },
+    "BONK": {
+        "short_ema": 5,
+        "long_ema": 47,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:01:00",
+        "backtest_profit_pct": -4.02,
+        "binance_pair": "BONKUSDT",
+        "market_cap_rank": 82
+    },
+    "FIL": {
+        "short_ema": 23,
+        "long_ema": 32,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 16:01:00",
+        "backtest_profit_pct": 3.15,
+        "binance_pair": "FILUSDT",
+        "market_cap_rank": 83
+    },
+    "JUP": {
+        "short_ema": 23,
+        "long_ema": 47,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 16:01:09",
+        "backtest_profit_pct": -4.46,
+        "binance_pair": "JUPUSDT",
+        "market_cap_rank": 89
+    },
+    "INJ": {
+        "short_ema": 5,
+        "long_ema": 44,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 16:01:10",
+        "backtest_profit_pct": 2.59,
+        "binance_pair": "INJUSDT",
+        "market_cap_rank": 95
+    },
+    "TIA": {
+        "short_ema": 23,
+        "long_ema": 41,
+        "signal_ema": 16,
+        "last_run": "2025-08-26 16:01:10",
+        "backtest_profit_pct": 2.44,
+        "binance_pair": "TIAUSDT",
+        "market_cap_rank": 97
+    },
+    "OP": {
+        "short_ema": 5,
+        "long_ema": 26,
+        "signal_ema": 6,
+        "last_run": "2025-08-26 16:01:16",
+        "backtest_profit_pct": 3.32,
+        "binance_pair": "OPUSDT",
+        "market_cap_rank": 100
+    },
+    "NEXO": {
+        "short_ema": 5,
+        "long_ema": 47,
+        "signal_ema": 4,
+        "last_run": "2025-08-26 16:01:16",
+        "backtest_profit_pct": -3.36,
+        "binance_pair": "NEXOUSDT",
+        "market_cap_rank": 99
+    }
+}
