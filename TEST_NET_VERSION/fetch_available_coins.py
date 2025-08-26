@@ -13,17 +13,22 @@ import example_utils
 from hyperliquid.utils import constants
 from hyperliquid.info import Info
 
-def fetch_available_coins():
+def fetch_available_coins(info=None, address=None):
     """
     Fetch available coins from Hyperliquid API
     Returns a set of coin symbols
+    
+    Args:
+        info: Optional pre-initialized Info object
+        address: Optional address string
     """
     try:
-        # Setup Hyperliquid connection
-        address, info, exchange = example_utils.setup(constants.TESTNET_API_URL, skip_ws=True)
-        
-        print("🔗 Connected to Hyperliquid API")
-        print(f"📍 Address: {address}")
+        # Use provided info object or create new connection
+        if info is None or address is None:
+            # Setup Hyperliquid connection (fallback for standalone usage)
+            address, info, exchange = example_utils.setup(constants.TESTNET_API_URL, skip_ws=True)
+            print("🔗 Connected to Hyperliquid API")
+            print(f"📍 Address: {address}")
         
         # Get meta information which contains universe of available assets
         meta = info.meta()
@@ -73,4 +78,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
