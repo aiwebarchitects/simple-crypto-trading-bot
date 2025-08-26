@@ -6,7 +6,9 @@
 
 ## Step 1: Get Your Hyperliquid Account
 
-### For Testnet (Recommended for Beginners)
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
+
+### After you created your Account - Switch first to Testnet
 1. Visit: https://app.hyperliquid-testnet.xyz/API
 2. Create API credentials:
    - **Name**: `testnet_api`
@@ -17,15 +19,19 @@
 ⚠️ **IMPORTANT**: Copy and save your private key immediately! It won't be shown again.
 
 ### For Mainnet (Advanced Users)
-Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
+Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500)
 - Get 4% reduced trading fees
+
+- get your Creds for the Main Net Version
+- https://app.hyperliquid.xyz/API
 
 ## Step 2: Clone and Configure
 
 ```bash
 # Clone the repository
-git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot
-cd simple-crypto-trading-bot
+git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot.git
+cd simple-crypto-trading-bot/TEST_NET_VERSION
+
 
 # Install dependencies
 pip install -r requirements.txt
@@ -82,7 +88,7 @@ Your Panel shall Look something like:
 ⚠️ **Safety First**: Always start with testnet to learn the system before using real money.
 
 
-# Multi Crypto Trading Bot - Low/High Reversal Strategy
+# Mutli Crypto Trading Bot - Low/High Reversal Strategy
 
 A comprehensive cryptocurrency trading system that combines automated backtesting with live trading capabilities using optimized parameters. The system implements a low/high reversal strategy with intelligent parameter optimization and real-time risk management.
 
