@@ -42,11 +42,8 @@ class Config:
     CONFIG_FILE_PATH = os.path.join(os.path.dirname(__file__), "executer", "config.json")
     
     # Default account credentials (will be overridden by config.json)
-    # DEFAULT_SECRET_KEY = the Private Key that was Generated on https://app.hyperliquid-testnet.xyz/API
-    # DEFAULT_ACCOUNT_ADDRESS = the Wallet that was Generated on https://app.hyperliquid-testnet.xyz/API
-    
-    DEFAULT_SECRET_KEY = "0x49123456789"
-    DEFAULT_ACCOUNT_ADDRESS = "0x0c123456789"
+    DEFAULT_SECRET_KEY = "0x493b593d9c3cba2a4a8b0149331c3b758b187ae023e465ae23f1860ac15ad0fe"
+    DEFAULT_ACCOUNT_ADDRESS = "0x0c4343B00560f58148E61A1766adc6A86B363895"
     
     # =============================================================================
     # TRADING PARAMETERS
@@ -68,11 +65,11 @@ class Config:
     STOP_LOSS_PERCENT = 5.0  # Stop loss at 5% loss
     
     # Trailing Stop Configuration
-    TRAILING_STOP_PERCENT = 0.2  # Trailing stop at 0.2% below max profit
-    TRAILING_STOP_MIN_PROFIT = 0.5  # Minimum profit before trailing stop activates
+    TRAILING_STOP_PERCENT = 0.9  # Trailing stop at 0.9% below max profit
+    TRAILING_STOP_MIN_PROFIT = 1.5  # Minimum profit before trailing stop activates
     
     # Take Profit Configuration
-    PROFIT_TAKE_THRESHOLD = 1.4  # Take profit when reaching 1.4%
+    PROFIT_TAKE_THRESHOLD = 8.4  # Take profit when reaching 8.4%
     PROFIT_TAKE_DROP = 1.2  # Take profit when profit drops to 1.2%
     
     # =============================================================================
