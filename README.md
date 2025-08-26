@@ -1,3 +1,20 @@
+# 🎉 MAINNET VERSION 1.0 RELEASE
+
+**🚀 Now Live on [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500) Mainnet!**
+
+After extensive testing and optimization, our crypto trading bot is now ready for live trading with real capital. This mainnet release features battle-tested algorithms, advanced risk management, and proven backtesting results.
+
+**✨ What's New:**
+- ✅ Production-ready mainnet configuration
+- ✅ Enhanced security and error handling  
+- ✅ Optimized trading parameters from extensive backtesting
+- ✅ Real-time risk management and position monitoring
+- ✅ 4% reduced trading fees with our [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500) bonus link
+
+**⚠️ Important:** Start with small position sizes and thoroughly understand the system before scaling up.
+
+---
+
 # 🚀 Quick Setup Guide
 
 ## Prerequisites
@@ -31,7 +48,8 @@ Create account with fee bonus: [HyperLiquid](https://app.hyperliquid.xyz/join/BO
 # Clone the repository
 git clone https://github.com/aiwebarchitects/simple-crypto-trading-bot.git
 cd simple-crypto-trading-bot/TEST_NET_VERSION
-
+for mainnet
+cd simple-crypto-trading-bot/MAIN_NET_VERSION
 
 # Install dependencies
 pip install -r requirements.txt
