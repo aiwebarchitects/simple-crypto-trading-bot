@@ -2,6 +2,8 @@
 
 A comprehensive backtesting system for cryptocurrency trading that implements a low/high reversal strategy using real market data from Binance.
 
+![Trading Panel](backtesting.png)
+
 ## 🎯 Strategy Overview
 
 This backtester implements a **Low/High Reversal Strategy** that:
