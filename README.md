@@ -6,6 +6,8 @@
 
 ## Step 1: Get Your Hyperliquid Account
 
+Create account with fee bonus: https://app.hyperliquid.xyz/join/BONUS500
+
 ### For Testnet (Recommended for Beginners)
 1. Visit: https://app.hyperliquid-testnet.xyz/API
 2. Create API credentials:
@@ -78,7 +80,7 @@ That's it! Your bot is ready to trade. 🎉
 ⚠️ **Safety First**: Always start with testnet to learn the system before using real money.
 
 
-# Bitcoin Trading Bot - Low/High Reversal Strategy
+# Mutli Crypto Trading Bot - Low/High Reversal Strategy
 
 A comprehensive cryptocurrency trading system that combines automated backtesting with live trading capabilities using optimized parameters. The system implements a low/high reversal strategy with intelligent parameter optimization and real-time risk management.
 
