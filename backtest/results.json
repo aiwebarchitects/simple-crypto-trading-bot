@@ -1,0 +1,161 @@
+{
+  "backtest_info": {
+    "strategy": "Low/High Reversal",
+    "backtest_period_days": 7,
+    "total_coins_tested": 19,
+    "successful_backtests": 19,
+    "timestamp": "2025-08-26T19:07:48.105999"
+  },
+  "top_10_results": [
+    {
+      "symbol": "SUI",
+      "name": "Sui",
+      "total_return_pct": 90.33748934415473,
+      "win_rate": 100.0,
+      "total_trades": 13,
+      "profit_factor": Infinity,
+      "max_drawdown": 0.0,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "TRX",
+      "name": "TRON",
+      "total_return_pct": 53.56825256954531,
+      "win_rate": 100.0,
+      "total_trades": 12,
+      "profit_factor": Infinity,
+      "max_drawdown": 0.0,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 5.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "XRP",
+      "name": "XRP",
+      "total_return_pct": 52.57516658262392,
+      "win_rate": 100.0,
+      "total_trades": 11,
+      "profit_factor": Infinity,
+      "max_drawdown": 0.0,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "total_return_pct": 19.04771649932502,
+      "win_rate": 100.0,
+      "total_trades": 7,
+      "profit_factor": Infinity,
+      "max_drawdown": 0.0,
+      "best_params": {
+        "long_offset_percent": 0.1,
+        "short_offset_percent": 0.15,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.5
+      }
+    },
+    {
+      "symbol": "WBTC",
+      "name": "Wrapped Bitcoin",
+      "total_return_pct": 18.67484246197725,
+      "win_rate": 100.0,
+      "total_trades": 7,
+      "profit_factor": Infinity,
+      "max_drawdown": 0.0,
+      "best_params": {
+        "long_offset_percent": 0.1,
+        "short_offset_percent": 0.15,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.5
+      }
+    },
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "total_return_pct": 88.02571482776463,
+      "win_rate": 92.3076923076923,
+      "total_trades": 13,
+      "profit_factor": 21.05029522566598,
+      "max_drawdown": 3.2937049762927733,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "HBAR",
+      "name": "Hedera",
+      "total_return_pct": 70.56232980699409,
+      "win_rate": 92.3076923076923,
+      "total_trades": 13,
+      "profit_factor": 12.396348136671117,
+      "max_drawdown": 4.871967994321693,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "XLM",
+      "name": "Stellar",
+      "total_return_pct": 49.4407060094822,
+      "win_rate": 91.66666666666666,
+      "total_trades": 12,
+      "profit_factor": 42.04864661567824,
+      "max_drawdown": 1.0075589942210337,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 3.0,
+        "trailing_stop_percent": 1.0
+      }
+    },
+    {
+      "symbol": "TON",
+      "name": "Toncoin",
+      "total_return_pct": 27.393298789348265,
+      "win_rate": 91.66666666666666,
+      "total_trades": 12,
+      "profit_factor": 4.6956594751625165,
+      "max_drawdown": 6.799301429717295,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.1,
+        "stop_loss_percent": 6.0,
+        "trailing_stop_percent": 1.5
+      }
+    },
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "total_return_pct": 57.04458938396988,
+      "win_rate": 90.9090909090909,
+      "total_trades": 11,
+      "profit_factor": 7.9371728453574635,
+      "max_drawdown": 6.826277124303487,
+      "best_params": {
+        "long_offset_percent": 0.05,
+        "short_offset_percent": 0.05,
+        "stop_loss_percent": 6.0,
+        "trailing_stop_percent": 1.5
+      }
+    }
+  ]
+}
