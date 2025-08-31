@@ -1,3 +1,5 @@
+# Free Open Source Crypto Trading Bot
+
 # 🎉 MAINNET VERSION 1.0 RELEASE
 
 **🚀 Now Live on [HyperLiquid](https://app.hyperliquid.xyz/join/BONUS500) Mainnet!**
